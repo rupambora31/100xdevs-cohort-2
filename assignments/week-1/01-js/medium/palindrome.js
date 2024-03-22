@@ -4,6 +4,25 @@
 */
 
 function isPalindrome(str) {
+  // Convert the string to lowercase and remove spaces and punctuation marks
+  str = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+  // Initialize pointers for the start and end of the string
+  let start = 0;
+  let end = str.length - 1;
+
+  // Loop through the string towards the center
+  while (start < end) {
+    // Check if characters at the pointers are not equal
+    if (str[start] !== str[end]) {
+      // If they're not equal, it's not a palindrome
+      return false;
+    }
+    // Move pointers towards the center
+    start++;
+    end--;
+  }
+  // If the loop completes without returning false, it's a palindrome
   return true;
 }
 
